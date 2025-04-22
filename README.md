@@ -1,4 +1,4 @@
-# Maulana Sodiqin - CV (LaTeX)
+# My Personal CV Written in LaTeX
 
 This repository contains my CV written in LaTeX with a modular and clean structure.
 
@@ -7,8 +7,8 @@ This repository contains my CV written in LaTeX with a modular and clean structu
 ```
 .
 ├── main.tex                 # Main file to compile
-├── preamble.tex            # Configuration and packages
-└── sections/
+├── preamble.tex             # Configuration and packages
+└── sections/                # Sections folder for organization and modularity
     ├── header.tex
     ├── contact.tex
     ├── summary.tex
