@@ -18,10 +18,16 @@ This repository contains my CV written in LaTeX with a modular and clean structu
 
 ## 🛠️ Compile
 
-Make sure LaTeX is installed, then run:
+The preamble uses `fontspec`, so build with XeTeX (or LuaTeX), not `pdflatex`. From `src/`, either run Tectonic through Nix (no TeX install needed):
 
 ```bash
-pdflatex main.tex
+nix --extra-experimental-features 'nix-command flakes' run nixpkgs#tectonic -- -o output main.tex
+```
+
+or, with TeX Live installed:
+
+```bash
+xelatex -output-directory=output main.tex
 ```
 
 ## 🔗 Links
