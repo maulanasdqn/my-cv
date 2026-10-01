@@ -10,10 +10,9 @@ This repository contains my CV written in LaTeX with a modular and clean structu
 ├── preamble.tex             # Configuration and packages
 └── sections/                # Sections folder for organization and modularity
     ├── header.tex
-    ├── contact.tex
-    ├── summary.tex
     ├── skills.tex
     ├── experience.tex
+    ├── projects.tex
     └── education.tex
 ```
 

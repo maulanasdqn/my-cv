@@ -1,45 +1,50 @@
-\usepackage[
-    ignoreheadfoot,
-    top=2 cm,
-    bottom=2 cm,
-    left=2 cm,
-    right=2 cm,
-    footskip=1.0 cm,
-]{geometry}
-\usepackage{titlesec}
-\usepackage{tabularx}
-\usepackage{array}
-\usepackage[dvipsnames]{xcolor}
-\definecolor{primaryColor}{RGB}{0, 0, 0}
-\usepackage{enumitem}
-\usepackage{fontawesome5}
-\usepackage{amsmath}
-\usepackage[
-    pdftitle={Maulana Sodiqin's CV},
-    pdfauthor={Maulana Sodiqin},
-    pdfcreator={LaTeX with RenderCV},
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\usepackage[margin=0.6in]{geometry} % Set page margins
+\usepackage{hyperref} % For clickable links
+\usepackage{titlesec} % To customize section titles
+\usepackage{enumitem} % For customizing lists
+\usepackage{needspace} % Keep entry headings with their bullets across page breaks
+\usepackage{fontspec} % Latin Modern without ligatures, so extracted text matches keywords
+\setmainfont{lmroman10}[
+  Extension=.otf,
+  UprightFont=*-regular,
+  BoldFont=*-bold,
+  ItalicFont=*-italic,
+  BoldItalicFont=*-bolditalic,
+  Ligatures={NoCommon},
+]
+\usepackage[document]{ragged2e} % Ragged-right text so no word is split across lines
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\setlength{\RaggedRightRightskip}{0pt plus 0.15\linewidth} \setlength{\emergencystretch}{2em} % Room to break lines without hyphens
+% Set hyperlink colors
+\hypersetup{
     colorlinks=true,
-    urlcolor=primaryColor
-]{hyperref}
-\usepackage{charter}
-\raggedright
+    urlcolor=blue,
+    linkcolor=blue,
+    pdftitle={Maulana Sodiqin - Senior Software Engineer CV},
+    pdfauthor={Maulana Sodiqin},
+    pdfkeywords={Rust, TypeScript, React, Axum, PostgreSQL, Kubernetes, Web Scraping},
+}
+% Remove page numbers
 \pagestyle{empty}
-\setcounter{secnumdepth}{0}
+% Define section formatting
+\titleformat{\section}
+  {\Large\bfseries\scshape}
+  {}
+  {0em}
+  {}[\titlerule\vspace{0.5ex}]
+\titlespacing*{\section}{0pt}{2.5ex}{1ex}
+% Tighten list spacing
+\setlist[itemize]{itemsep=1pt, parsep=0pt}
+% Remove indentation for new paragraphs
 \setlength{\parindent}{0pt}
-\setlength{\topskip}{0pt}
-\setlength{\columnsep}{0.15cm}
-\pagenumbering{gobble}
-\titleformat{\section}{\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
-\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
-\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
-\newenvironment{highlights}{
-    \begin{itemize}[
-        topsep=0.10 cm,
-        parsep=0.10 cm,
-        partopsep=0pt,
-        itemsep=0pt,
-        leftmargin=10pt
-    ]
-}{
-    \end{itemize}
+% Define a command for experience/project entries
+\newcommand{\entry}[4]{
+  \Needspace*{4\baselineskip}
+  \noindent\textbf{#1}\hfill\textbf{#2}%
+  \if\relax\detokenize{#3#4}\relax\else\\ % Skip the second line when #3 and #4 are empty
+  \textit{#3}\hfill\textit{#4}\fi
 }
